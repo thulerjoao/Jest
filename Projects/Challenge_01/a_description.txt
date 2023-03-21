@@ -1,0 +1,21 @@
+Our bank has grown and now makes international transfers
+However, for it to be done, there are some rules:
+It is not possible to transfer less than 1000 "money";
+It is not possible to transfer more than 9999 "money";
+It is not possible to transfer an amount (money to be transferred + fees) greater than the payer's current balance;
+There is a flat fee of 100 "money" for each transfer;
+If the transfer is between 1000 and 5000, there is a fee of 5% of the amount to be transferred, in addition to the fixed fee;
+If the transfer is above 5001 "money", the fee is 10% in addition to the fixed fee.
+Try to write a readable code, with variables and descriptive functions, besides, obviously, using TDD with unit tests.
+
+pt-br:
+
+Nosso banco cresceu e agora faz transferências internacionais
+Porém, para que ela possa ser feita, existem algumas regras:
+Não é possível transferir menos que 1000 "dinheiros";
+Não é possível transferir mais que 9999 "dinheiros";
+Não é possível transferir uma quantidade (dinheiro a ser transferido + taxas) maior do que o saldo atual do pagador;
+Existe uma taxa fixa de 100 "dinheiros" para cada transferência;
+Se a transferência for entre 1000 e 5000, existe uma taxa 5% do valor a ser transferido, além da taxa fixa;
+Se a transferência for acima de 5001 "dinheiros", a taxa é de 10%, além da taxa fixa.
+Tentem escrever um código legível, com variáveis e funções descritivas, além de, obviamente, utilizar o TDD com testes unitários.
