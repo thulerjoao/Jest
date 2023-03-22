@@ -1,5 +1,6 @@
 import { Account } from "./account";
 import { getAccount } from "./account";
+import { validateAmountLimit, validatePayerAmount} from "./validations"
 
 export function transferMoney(payerId, receiverId, transferAmount) {
 
@@ -10,7 +11,10 @@ export function transferMoney(payerId, receiverId, transferAmount) {
     const payer = getAccount(payerId)
     const receiver = getAccount(receiverId)
 
-    validatePayerAmount(payer, transferAmount, tax)
+    // const payer = getAccount(5) //to force error on call test on getAccount
+    // const receiver = getAccount(3) //to force error on call test on getAccount
+
+    validatePayerAmount(payer.balance, transferAmount, tax)
 
     const updatedPayerAccount = new Account(payerId, payer.balance - transferAmount - tax)
     const updatedReceiverAccount = new Account(receiverId, receiver.balance + transferAmount)
@@ -29,16 +33,4 @@ function calculateTax(transferAmount) {
         const tax = transferAmount * 0.10 + 100;
         return tax;
     }
-}
-
-function validateAmountLimit(transferAmount) {
-  if (transferAmount < 1000 || transferAmount > 10000) {
-      throw new Error(`Transfer amount is invalid: ${transferAmount}`);
-  }
-}
-
-function validatePayerAmount(payer, transferAmount, tax) {
-  if (payer.balance < transferAmount + tax) {
-      throw new Error(`Insufficient funds`);
-  }
 }
