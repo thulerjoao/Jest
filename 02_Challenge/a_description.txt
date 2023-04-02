@@ -1,0 +1,36 @@
+Our challenge now is to create a virtual store in a new project with some business rules. 
+This store has a database (which can be represented by mocks) that contains the identifier of each product id, its name,
+ its price and its quantity in stock.
+
+The Store is on Sale!
+
+- Taking two products, you get 10% off. If you take 3 or more, the discount goes to 20% and that's the maximum the discount can reach.
+- In addition to the sum of the prices of discounted products, the store also charges shipping on purchases below R$100.00.
+- To calculate shipping, you can use this public API: https://viacep.com.br/ws/30350040/json/ and 
+    replace the numeric value with the customer's zip code. For any state outside the Southeast, 
+    a shipping fee of R$25.00 will be charged (but only for purchases under R$100.00). And within the southeast, 
+    R$10.00. But remember that here it is also worth using mocks for your tests.
+- Your application then must calculate the final purchase price based on two variables: the customer's zip code and an array with the IDs 
+    of the products he or she is buying.
+- Try to use TDD together with mocks, refactor a lot when your tests are green, create functions and files with few responsibilities to 
+    make creating unit tests easier.
+
+
+PT-BR:
+
+Nosso desafio agora é criar uma loja virtual em um novo projeto com algumas regras de negócio. 
+Essa loja conta com um banco de dados (que pode ser representado por mocks) que contém o identificador de cada produto id,
+seu nome, seu preço e sua quantidade em estoque.
+
+A Loja está em Promoção!
+
+- Levando dois produtos, vc ganha 10% de desconto. Caso leve 3 ou mais, o desconto passa para 20% e esse é o máximo que o desconto pode chegar.
+- Além da soma dos preços dos produtos com desconto, a loja também cobra frete nas compras abaixo de R$100,00.
+- Para calcular o frete, você pode utilizar essa API pública: https://viacep.com.br/ws/30350040/json/ e substituir o valor numérico 
+    pelo CEP do cliente. Para qualquer estado fora do sudeste, será cobrado um frete 
+de R$25,00 (mas apenas para compras abaixo de R$100,00). E dentro do sudeste, R$10,00. Mas lembre-se que aqui também vale utilizar
+    mocks para seus testes.
+- Sua aplicação então deve calcular o preço final da compra baseando-se em duas variáveis: o CEP do cliente e um vetor com os IDs dos produtos 
+    que ele ou ela estão comprando.
+Tentem utilizar o TDD junto com os mocks, refatore bastante quando seus testes estiverem verdes, crie funções e arquivos com poucas 
+    responsabilidades para tornar a criação de testes unitários mais fácil.

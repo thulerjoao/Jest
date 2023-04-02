@@ -19,11 +19,22 @@ describe("Transfer Money", ()=>{
 
 
         //NEW METHOD WITH NEW MOCKS IMPLEMENTATION (SAME RESULT):
-
+        
         accounts.getAccount = jest.fn()
-            .mockImplementationOnce((id)=> new accounts.Account(id, 10000)) //by this way, u can use the prop that was sent to the function
-            .mockImplementationOnce((id)=> new accounts.Account(id, 0))
-            
+        .mockImplementationOnce((id)=> new accounts.Account(id, 10000)) //by this way, u can use the prop that was sent to the function
+        .mockImplementationOnce((id)=> new accounts.Account(id, 0))
+        
+
+        //You can apply beboreEach and afterEach in order to make the code clearly::
+        // beforeEach(() => {
+        //     accounts.getAccount = jest.fn()
+        //       .mockImplementationOnce((payerId) => new accounts.Account(payerId, 10000))
+        //       .mockImplementationOnce((receiverId) => new accounts.Account(receiverId, 0))
+        //   })
+        //   afterEach(() => {
+        //     accounts.getAccount.mockClear()
+        //   })
+
         // OBS:: You can use the subs mockReturnValue and mockImplementation to make the mock always act
 
         // Validate function of limits of value::
@@ -43,6 +54,7 @@ describe("Transfer Money", ()=>{
         //test to verify if the function are been called with the correct userId::
         expect(accounts.getAccount).toHaveBeenCalledWith(payerId)
         expect(accounts.getAccount).toHaveBeenCalledWith(receiverId)
+
 
 
         expect(updatedAcounts).toHaveLength(2);
